@@ -14,5 +14,6 @@ namespace InternshipPortal.Data
         {
         }
         public DbSet<InternshipPortal.Models.Job> Job { get; set; }
+        public DbSet<InternshipPortal.Models.Resumes> Resumes { get; set; }
     }
 }
