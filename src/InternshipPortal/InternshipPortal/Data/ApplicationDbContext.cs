@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using InternshipPortal.Models;
 
 namespace InternshipPortal.Data
 {
@@ -12,5 +13,6 @@ namespace InternshipPortal.Data
             : base(options)
         {
         }
+        public DbSet<InternshipPortal.Models.Job> Job { get; set; }
     }
 }
