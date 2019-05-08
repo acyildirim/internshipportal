@@ -39,3 +39,32 @@ body {
 .navbar {
     background-image: linear-gradient(to right, #FFF8DC,#6db9ef);
 }
+
+.navbar-link, .navbar-brands {
+    font-size: 16px;
+    color: #fff !important;
+    margin: 2px;
+    font-weight: bold;
+    
+}
+.navlink1 {
+    font-size: 16px;
+    color: #fff !important;
+    font-weight: bold;
+    background: #4169E1;
+    margin: 5px;
+}
+.navlink2 {
+    font-size: 16px;
+    color: #fff !important;
+    font-weight: bold;
+    background: #4169E1;
+    margin: 5px;
+}
+.btn-link {
+    font-size: 16px;
+    color: #fff !important;
+    font-weight: bold;
+    background-color:red;
+    margin: 5px;
+}
