@@ -1,0 +1,7 @@
+﻿Account Authorization--- user yapısı asp.net core identitiy framework ile sağlanıyor.
+Proje mimarisi genel olarak asp.net core mvc olarak ele alınmıştır.
+code first yaklaşımı ile database'e yapılan güncellemeler c#'taki revizeler akabinde migration scriptleri ile yapılır.
+
+ dotnet ef migrations add [migration_name]
+ dotnet ef database update
+
