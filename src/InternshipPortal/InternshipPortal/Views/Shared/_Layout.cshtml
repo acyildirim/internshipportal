@@ -7,7 +7,7 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link href="~/css/site.css" rel="stylesheet" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -30,10 +30,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" class="navbar-link" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" class="navbar-link" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" class="navbar-link" asp-controller="Jobs" asp-action="Index">Jobs</a></li>
-                    <li><a asp-area="" class="navbar-link" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-area="" asp-controller="Jobs" asp-action="Index">Jobs</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
                 <partial name="_LoginPartial" />
             </div>
@@ -42,11 +42,15 @@
 
     <partial name="_CookieConsentPartial" />
 
+
+
+
+
+
     <div class="container body-content">
         @RenderBody()
-        <hr />
         <footer>
-            <p>&copy; 2019 - InternshipPortal</p>
+            <p class="InternshipPortal">&copy; 2019 - InternshipPortal</p>
         </footer>
     </div>
 

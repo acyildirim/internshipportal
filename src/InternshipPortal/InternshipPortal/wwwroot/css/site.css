@@ -1,15 +1,15 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    
 }
 
 /* Carousel */
@@ -65,6 +65,15 @@ body {
     font-size: 16px;
     color: #fff !important;
     font-weight: bold;
-    background-color:red;
+    background-color:black;
     margin: 5px;
 }
+.InternshipPortal {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
