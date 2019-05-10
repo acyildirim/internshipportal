@@ -5,3 +5,27 @@ code first yaklaşımı ile database'e yapılan güncellemeler c#'taki revizeler
  dotnet ef migrations add [migration_name]
  dotnet ef database update
 
+public async Task<IActionResult> Apply(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var job = await _context.Job
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (job == null)
+            {
+                return NotFound();
+            }
+            _context.Add(new JobApplicant
+            {
+                JobID = id.Value,
+                UserID = User.Identity.Name
+
+        });
+            await _context.SaveChangesAsync();
+            return View(job);
+        }
+
+Apply page aç 

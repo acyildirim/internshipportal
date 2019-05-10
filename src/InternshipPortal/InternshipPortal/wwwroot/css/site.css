@@ -1,15 +1,15 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /* Carousel */
@@ -35,45 +35,3 @@ body {
         display: none;
     }
 }
-
-.navbar {
-    background-image: linear-gradient(to right, #FFF8DC,#6db9ef);
-}
-
-.navbar-link, .navbar-brands {
-    font-size: 16px;
-    color: #fff !important;
-    margin: 2px;
-    font-weight: bold;
-    
-}
-.navlink1 {
-    font-size: 16px;
-    color: #fff !important;
-    font-weight: bold;
-    background: #4169E1;
-    margin: 5px;
-}
-.navlink2 {
-    font-size: 16px;
-    color: #fff !important;
-    font-weight: bold;
-    background: #4169E1;
-    margin: 5px;
-}
-.btn-link {
-    font-size: 16px;
-    color: #fff !important;
-    font-weight: bold;
-    background-color:black;
-    margin: 5px;
-}
-.InternshipPortal {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-
-
-

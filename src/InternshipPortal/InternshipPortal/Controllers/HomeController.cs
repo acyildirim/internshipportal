@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using InternshipPortal.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace InternshipPortal.Controllers
 {
@@ -12,6 +13,8 @@ namespace InternshipPortal.Controllers
     {
         public IActionResult Index()
         {
+            List<SelectListItem> kategoriler = new List<SelectListItem>();
+
             return View();
         }
 

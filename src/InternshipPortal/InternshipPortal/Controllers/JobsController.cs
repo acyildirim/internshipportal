@@ -54,7 +54,7 @@ namespace InternshipPortal
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Job job)
+        public async Task<IActionResult> Create([FromForm] Job job)
         {
             if (ModelState.IsValid)
             {
@@ -148,6 +148,33 @@ namespace InternshipPortal
         private bool JobExists(int id)
         {
             return _context.Job.Any(e => e.Id == id);
+        }
+
+        public async Task<IActionResult> Apply(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var job = await _context.Job
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (job == null)
+            {
+                return NotFound();
+            }
+            var userId = ((System.Security.Claims.ClaimsIdentity)User.Identity).Claims.First(p => p.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
+            var createdTime = DateTime.Now;
+            _context.Add(new JobApplicant
+            {
+                JobID = id.Value,
+                UserID = userId,
+                CreatedTime = createdTime 
+
+
+        });
+            await _context.SaveChangesAsync();
+            return View(job);
         }
     }
 }

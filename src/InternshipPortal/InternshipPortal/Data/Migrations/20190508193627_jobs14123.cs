@@ -7,7 +7,7 @@ namespace InternshipPortal.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<decimal>(
-                name: "Sallary",
+                name: "Salary",
                 table: "Job",
                 nullable: false,
                 defaultValue: 0m);
@@ -16,7 +16,7 @@ namespace InternshipPortal.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Sallary",
+                name: "Salary",
                 table: "Job");
         }
     }
