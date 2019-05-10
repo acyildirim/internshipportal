@@ -35,3 +35,6 @@ body {
         display: none;
     }
 }
+.navbar {
+    background-image: linear-gradient(to right, #FFF8DC,#6db9ef);
+}
