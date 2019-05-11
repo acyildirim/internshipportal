@@ -13,17 +13,17 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
+            <div class="createInputs">
                 <label asp-for="JobTitle" class="control-label"></label>
                 <input asp-for="JobTitle" class="txtJobtitle" />
                 <span asp-validation-for="JobTitle" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="createInputs">
                 <label asp-for="Company" class="control-label"></label>
                 <input asp-for="Company" class="txtCompany" />
                 <span asp-validation-for="Company" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="createInputs">
                 <label asp-for="Category" class="control-label"></label>
                 @Html.DropDownList("Category",
                     new SelectList(Enum.GetValues(typeof(Category))),
@@ -32,18 +32,18 @@
                 <span asp-validation-for="location" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
+            <div class="createInputs">
                 <label asp-for="Salary" class="control-label"></label>
                 <input asp-for="Salary" class="txtSalary" />
                 <span asp-validation-for="Salary" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
+            <div class="createInputs">
                 <label asp-for="Description" class="control-label"></label>
                 <textarea asp-for="Description"  class="txtDescription"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="createInputs">
                 <label asp-for="location" class="control-label"></label>
                 @Html.DropDownList("location",
                     new SelectList(Enum.GetValues(typeof(Location))),
@@ -52,7 +52,7 @@
                 <span asp-validation-for="location" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
+            <div class="createInputs">
                 <label asp-for="ContactEmail" class="control-label"></label>
                 <textarea asp-for="ContactEmail" class="txtEmail"></textarea>
                 <span asp-validation-for="ContactEmail" class="text-danger"></span>
