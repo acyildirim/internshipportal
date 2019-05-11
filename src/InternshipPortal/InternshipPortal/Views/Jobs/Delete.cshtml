@@ -5,24 +5,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<h2 class="deleteJobHeader">Delete</h2>
+<div class="backListInDelete">
+    <a asp-action="Index">Back to List</a>
 
-<h3>Are you sure you want to delete this?</h3>
+</div>
+
+<h3 class="deleteJobHeader">Are you sure you want to delete this?</h3>
 <div>
-    <h4>Job</h4>
-    <hr />
     <dl class="dl-horizontal">
-        <dt>
+        <dt class="deleteLabel">
             @Html.DisplayNameFor(model => model.JobTitle)
         </dt>
-        <dd>
+        <dd class="deleteItem">
             @Html.DisplayFor(model => model.JobTitle)
         </dd>
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Delete" class="btnDelete" /> |
     </form>
+    
+
 </div>

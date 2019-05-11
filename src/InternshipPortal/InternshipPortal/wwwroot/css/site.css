@@ -255,10 +255,12 @@ nav ul li a:hover::after{
     color:gray;
 }
 .createDetailItems {
+    font-size:16px;
     color: gray;
     font-weight: bold;
 }
 .createDetailLabels {
+    font-size: 16px;
     color: gray;
     font-weight: bold;
 }
@@ -322,4 +324,113 @@ nav ul li a:hover::after{
 
     .editJobButton:hover {
         background-color: deepskyblue;
+    }
+
+/*--------------JOB DETAİL PAGE-------------------*/
+
+
+.jobDetailBox {
+    color:gray;
+    font-weight:bold;
+    margin-top:30px;
+}
+.jobDetailHeader{
+    color:gray;
+    font-weight:bold;
+}
+.editJobInDetail, .applyButtonInDetail {
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    height: 40px;
+    color: red;
+    font-size: 16px;
+}
+
+.editJobInDetail {
+    padding-left: 105px;
+    padding-top: 10px;
+}
+
+.editJobInDetail {
+    width: 250px;
+    border: none;
+    outline: none;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: .3s ease-in-out;
+}
+
+    .editJobInDetail:hover {
+        background-color: lawngreen;
+    }
+
+.applyButtonInDetail {
+    padding-left: 95px;
+    padding-top: 10px;
+}
+
+.applyButtonInDetail {
+    width: 250px;
+    border: none;
+    outline: none;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: .3s ease-in-out;
+}
+
+    .applyButtonInDetail:hover {
+        background-color: lawngreen;
+    }
+/*-----------------DELETE JOB----------------*/
+.deleteJobHeader{
+    color:gray;
+    font-weight:bold;
+    font-size:26px;
+}
+.deleteLabel,.deleteItem{
+    color:red;
+    font-weight:bold;
+    font-size:16px;
+}
+.btnDelete {
+    width: 300px;
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: .3s ease-in-out;
+}
+
+    .btnDelete:hover {
+        background-color: red;
+    }
+.backListInDelete, .btnDelete{
+    margin-bottom:30px;
+}
+
+.backListInDelete {
+    padding-left: 80px;
+    padding-top: 10px;
+}
+
+.backListInDelete {
+    width: 250px;
+    border: none;
+    outline: none;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: .3s ease-in-out;
+    font-weight:bold;
+}
+
+    .backListInDelete:hover {
+        background-color: red;
     }
