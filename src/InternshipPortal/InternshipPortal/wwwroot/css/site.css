@@ -118,7 +118,7 @@ h3::before {
     }
 
 .search-internship {
-    padding: : 10px 0;
+    padding: 10px 0;
     margin: -400px 6% 50px;
     background-image: linear-gradient(to right, #FFF8DC,#6db9ef);
 }
@@ -179,7 +179,8 @@ nav ul li a:hover::before,
 nav ul li a:hover::after{
     transform:scaleX(1);
 }
-.rowCreate{
+/*------------CREATE NEW JOB ------------------*/
+.createJobBox {
     position: absolute;
     top: 37%;
     left: 50%;
@@ -224,7 +225,7 @@ nav ul li a:hover::after{
     margin-bottom: 30px;
 }
 
-.txtJobtitle, .txtCompany, .categoryList, .txtSalary, .txtDescription, .locationList, .txtEmail, .btnSubmit {
+.txtJobtitle, .txtCompany, .categoryList, .txtSalary, .txtDescription, .locationList, .txtEmail, .btnSubmit  {
     border: none;
     border-bottom: 3px solid #fff;
     outline: none;
@@ -249,7 +250,76 @@ nav ul li a:hover::after{
     .backList:hover {
         background-color: red;
     }
-
+/*--------------Create INDEX--------------------*/
 .createYazi{
     color:gray;
 }
+.createDetailItems {
+    color: gray;
+    font-weight: bold;
+}
+.createDetailLabels {
+    color: gray;
+    font-weight: bold;
+}
+.createIndexHeader {
+    color: gray;
+    font-weight: bold;
+}
+
+.createNewButton {
+    padding-left: 85px;
+    padding-top: 10px;
+}
+
+.createNewButton {
+    width: 250px;
+    border: none;
+    outline: none;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: .3s ease-in-out;
+}
+
+    .createNewButton:hover {
+        background-color: limegreen;
+    }
+
+/* ---------------EDİT JOB PAGE-------------------*/
+
+.editJobHeader{
+    color:gray;
+    font-weight:bold;
+}
+
+.editJobBox {
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    height: 600px;
+    padding: 80px 40px;
+    box-sizing: border-box;
+}
+
+.editJobButton {
+    color: red;
+    border-bottom: 3px solid #fff;
+    width: 300px;
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: red;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: .3s ease-in-out;
+    margin-bottom: 40px;
+}
+
+    .editJobButton:hover {
+        background-color: deepskyblue;
+    }

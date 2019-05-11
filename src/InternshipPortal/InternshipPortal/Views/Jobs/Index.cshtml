@@ -5,16 +5,23 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2 class="createIndexHeader">Current Jobs</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div class="createNewButton">
+        <a asp-action="Create">Create New</a>
+</div>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th class="createDetailLabels">
                 @Html.DisplayNameFor(model => model.JobTitle)
+            </th>
+            <th class="createDetailLabels">
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th class="createDetailLabels">
+                @Html.DisplayNameFor(model => model.Category)
             </th>
             <th></th>
         </tr>
@@ -22,11 +29,17 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            <td class="createDetailItems">
                 @Html.DisplayFor(modelItem => item.JobTitle)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <td class="createDetailItems">
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+            <td class="createDetailItems">
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td class="createIndexButtons">
+                <a class="createIndexEdit" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
