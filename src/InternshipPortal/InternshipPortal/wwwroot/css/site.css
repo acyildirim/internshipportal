@@ -3,6 +3,8 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('../images/job5.jpg');
+    background-size: cover;
 }
 
 /* Wrapping element */
@@ -36,5 +38,218 @@ body {
     }
 }
 .navbar {
+    background-color:transparent;
+}
+.navlink1, .navlink2 {
+    font-size: 16px;
+    color: #fff !important;
+    margin: 2px;
+    background: #4169E1;
+    margin: 5px;
+}
+.btn-link {
+    background: red;
+    font-size: 16px;
+    color: #fff !important;
+}
+.menuItem {
+    display:flex;
+    justify-content:space-between;
+    text-transform:uppercase;
+    font-size: 16px;
+    color: lightslategrey !important;
+    margin: 2px;
+    font-weight: bold;
+    animation:ease-in-out;
+}
+.navbar-right {
+    font-size: 16px;
+    margin: 2px;
+    font-weight: bold;
+}
+.navbar-header {
+    font-weight: bold;
+}
+/*------EMPLOYERS---------*/
+
+#employers {
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+    #employers h3 {
+        text-align: center;
+        padding-bottom: 40px;
+    }
+
+h3::before {
+    content: "";
     background-image: linear-gradient(to right, #FFF8DC,#6db9ef);
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    z-index: -10;
+    margin-top: -15px;
+    border-top-left-radius: -70px;
+    border-bottom-right-radius: 90px;
+}
+
+#employers img {
+    max-width: 150px;
+    margin: 20px 30px;
+}
+.InternshipPortal {
+    padding-top: 600px;
+
+}
+.banner {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+    .banner h1 {
+        padding-top: 170px;
+        font-size: 50px;
+        letter-spacing: 6px;
+        font-weight: 600;
+        text-shadow: 0 0 30px rgba(0,0,0,0.5);
+    }
+
+.search-internship {
+    padding: : 10px 0;
+    margin: -400px 6% 50px;
+    background-image: linear-gradient(to right, #FFF8DC,#6db9ef);
+}
+
+    .search-internship .from-control {
+        height: 40px;
+        padding: 20px;
+        max-width: 250px;
+        display: inline-flex;
+        margin: 40px 5px;
+        border-radius: 0;
+        box-shadow: none !important;
+        border: none !important;
+        color:aqua;
+    }
+
+    .search-internship .btn-primary {
+        padding: 5px 20px;
+        display: inline-flex;
+        margin: 5px;
+        border-radius: 0;
+        box-shadow: none !important;
+        border: none !important;
+    }
+nav ul{
+    display:flex;
+}
+nav ul li{
+    list-style:none;
+}
+nav ul li a{
+    padding: 1rem 0;
+    margin:0 3rem;
+    position:relative;
+    letter-spacing:2px;
+
+}
+nav ul li a:last-child{
+    margin-right:0;
+}
+nav ul li a::before,
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:2px;
+    background-color:crimson;
+    left: 0;
+    transform: scaleX(0);
+}
+nav ul li a::before{
+    top:0;
+}
+nav ul li a::after{
+    bottom:0;
+}
+nav ul li a:hover::before,
+nav ul li a:hover::after{
+    transform:scaleX(1);
+}
+.rowCreate{
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    height: 600px;
+    padding: 80px 40px;
+    box-sizing: border-box;
+}
+.control-label {
+    font-weight: 900;
+    color: #fff;
+}
+.createYazi{
+    color:#fff;
+    font-weight:bold;
+}
+.form-group {
+    width: 300%;
+    margin-bottom: 30px;
+}
+::placeholder {
+    color: rgba(255,255,255,.5);
+}
+.btnSubmit {
+    width:300px;
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: .3s ease-in-out;
+}
+    .btnSubmit:hover {
+        background-color: deepskyblue;
+    }
+.txtJobtitle, .txtCompany, .categoryList, .txtSalary, .txtDescription, .locationList, .txtEmail, .btnSubmit {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.txtJobtitle, .txtCompany, .categoryList, .txtSalary, .txtDescription, .locationList, .txtEmail, .btnSubmit {
+    border: none;
+    border-bottom: 3px solid #fff;
+    outline: none;
+    height: 40px;
+    color: red;
+    font-size: 16px;
+    background-color: transparent;
+}
+.backList{
+    padding-left:80px;
+    padding-top:10px;
+}
+.backList {
+    width: 250px;
+    border: none;
+    outline: none;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: .3s ease-in-out;
+}
+    .backList:hover {
+        background-color: red;
+    }
+
+.createYazi{
+    color:gray;
 }

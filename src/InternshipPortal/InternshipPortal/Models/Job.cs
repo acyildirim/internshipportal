@@ -11,7 +11,9 @@ namespace InternshipPortal.Models
         public int Id { get; set; }
         [Required]
         
-        public string Name { get; set; }
+        public string JobTitle { get; set; }
+
+        public string Company { get; set; }
         public decimal Salary { get; set; }
         public string Description { get; set; }
         public Location location { get; set; }

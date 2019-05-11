@@ -5,37 +5,51 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<div class="createYazi">
 
-<h4>Job</h4>
-<hr />
-<div class="row">
+    <h2>Create Job</h2>
+</div>
+    <div class="backList">
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+
+
+
+<div class="rowCreate">
+    
+    
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" placeholder="Job Title" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label asp-for="JobTitle" class="control-label"></label>
+                <input asp-for="JobTitle" placeholder="Job Title" class="txtJobtitle" />
+                <span asp-validation-for="JobTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company" class="control-label"></label>
+                <input asp-for="Company" placeholder="Company Name" class="txtCompany" />
+                <span asp-validation-for="Company" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Category" class="control-label"></label>
                 @Html.DropDownList("Category",
                     new SelectList(Enum.GetValues(typeof(Category))),
                     "Select Category",
-                    new { @class = "form-control" })
+                    new { @class = "categoryList" })
                 <span asp-validation-for="location" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Salary" class="control-label"></label>
-                <input asp-for="Salary" placeholder="Enter The Salary" class="form-control" />
+                <input asp-for="Salary" placeholder="Enter The Salary" class="txtSalary" />
                 <span asp-validation-for="Salary" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
-                <textarea asp-for="Description" placeholder="Qualifications" class="form-control"></textarea>
+                <textarea asp-for="Description" placeholder="Qualifications" class="txtDescription"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -43,28 +57,28 @@
                 @Html.DropDownList("location",
                     new SelectList(Enum.GetValues(typeof(Location))),
                     "Select Location",
-                    new { @class = "form-control" })
+                    new { @class = "locationList" })
                 <span asp-validation-for="location" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="ContactEmail" class="control-label"></label>
-                <textarea asp-for="ContactEmail" placeholder="Enter Contact Email" class="form-control"></textarea>
+                <textarea asp-for="ContactEmail" placeholder="Enter Contact Email" class="txtEmail"></textarea>
                 <span asp-validation-for="ContactEmail" class="text-danger"></span>
             </div>
 
             <div class="form-group">
 
 
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btnSubmit" />
             </div>
         </form>
     </div>
+
+    
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
