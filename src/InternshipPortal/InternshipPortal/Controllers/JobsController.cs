@@ -206,6 +206,30 @@ namespace InternshipPortal
 
         }
 
+        public async Task<IActionResult> Applicants(int? id)
+        {
+
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+            
+            var applicants = await _context.JobApplicant
+                .Where(m => m.JobID == id)
+                .ToListAsync();
+            foreach (var applicant in applicants)
+            {
+                applicant.User =  _context.Users.First(m => m.Id == applicant.UserID);
+              
+                
+            }
+            return View(applicants);
+
+        }
 
     }
+
+
+
 }

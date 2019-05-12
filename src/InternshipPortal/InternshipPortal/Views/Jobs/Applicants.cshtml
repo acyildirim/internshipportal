@@ -1,0 +1,43 @@
+﻿@model List<InternshipPortal.Models.JobApplicant>
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="jobDetailHeader">Details Job</h2>
+
+<div class="backList">
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<hr />
+@foreach (var item in Model)
+{
+
+    <div class="jobDetailBox">
+        <dl class="dl-horizontal">
+            <dt class="createDetailLabels">
+                @Html.DisplayNameFor(model => model[0].User.UserName)
+            </dt>
+            <dd class="createDetailItems">
+                @item.User.UserName
+            </dd>
+
+            <dt class="createDetailLabels">
+                @Html.DisplayNameFor(model => model[0].User.Email)
+            </dt>
+            <dd class="createDetailItems">
+                @item.User.Email
+            </dd>
+
+            <dt class="createDetailLabels">
+                @Html.DisplayNameFor(model => model[0].CreatedTime)
+            </dt>
+            <dd class="createDetailItems">
+                @item.CreatedTime
+            </dd>
+
+        </dl>
+    </div>
+}
