@@ -12,7 +12,7 @@ namespace InternshipPortal.Models
         public int JobID { get; set; }
         public string UserID{ get; set; }
 
-        [System.ComponentModel.DataAnnotations.Display(Name = "Oluşturma Tarihi")]
+        [System.ComponentModel.DataAnnotations.Display(Name = "Created Time")]
         public DateTime CreatedTime { get; set; }
 
         public User  User { get; set; }

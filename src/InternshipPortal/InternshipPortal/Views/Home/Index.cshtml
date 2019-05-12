@@ -9,20 +9,22 @@
 
 </div>
 
-<div class="search-internship text-center">
-    <input type="text" class="from-control" placeholder="search Keyword">
-    <input type="text" class="from-control" placeholder="company">
-    <input type="text" class="from-control" placeholder="location">
-    <input type="button" class="btn btn-primary" value="Find Internship">
-</div>
-
-<section id="employers">
-    <div class="container text-center">
-        <h3> TOP EMPLOYERS</h3>
-        <img src="~/images/facebook.png" />
-        <img src="~/images/micro.png" />
-        <img src="~/images/apple1.png" />
-        <img src="~/images/Oracle-Logo.png" />
-        <img src="~/images/amazon.png" />
+<form asp-action="Index" asp-controller="Jobs" method="get">
+    <div class="search-internship text-center">
+        <input type="text" class="from-control" name="search" placeholder="Job Title">
+        <input type="submit" class="btn btn-primary" value="Find Internship">
     </div>
-</section>
+</form>
+
+    
+
+    <section id="employers">
+        <div class="container text-center">
+            <h3> TOP EMPLOYERS</h3>
+            <img src="~/images/facebook.png" />
+            <img src="~/images/micro.png" />
+            <img src="~/images/apple1.png" />
+            <img src="~/images/Oracle-Logo.png" />
+            <img src="~/images/amazon.png" />
+        </div>
+    </section>

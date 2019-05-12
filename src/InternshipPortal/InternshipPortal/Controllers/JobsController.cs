@@ -25,7 +25,23 @@ namespace InternshipPortal
         {
             var userId = ((System.Security.Claims.ClaimsIdentity)User.Identity).Claims.FirstOrDefault(p => p.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
             ViewBag.CurrentUserId = userId;
-            return View(await _context.Job.ToListAsync());
+
+            var searchText = Request.Query["search"];
+            List<Job> jobList = null;
+
+            if (String.IsNullOrEmpty(searchText))
+            {
+
+            jobList = await _context.Job.ToListAsync();
+            }
+            else
+            {
+                jobList = await _context.Job.Where(p => (p.JobTitle + " " + p.Company + " " + p.location).IndexOf(searchText, StringComparison.InvariantCultureIgnoreCase)>=0).ToListAsync();
+
+            }
+
+            return View(jobList);
+
         }
 
 
@@ -69,7 +85,7 @@ namespace InternshipPortal
         {
             var userId = ((System.Security.Claims.ClaimsIdentity)User.Identity).Claims.First(p => p.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
 
-            
+
             if (ModelState.IsValid)
             {
                 _context.Add(new Job
@@ -82,7 +98,7 @@ namespace InternshipPortal
                     ContactEmail = job.ContactEmail,
                     Description = job.Description,
                     Salary = job.Salary
-                    
+
                 });
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -216,7 +232,7 @@ namespace InternshipPortal
                 await _context.SaveChangesAsync();
 
             }
-            
+
             return View(job);
 
         }
@@ -228,19 +244,19 @@ namespace InternshipPortal
             {
                 return NotFound();
             }
-            
+
             var applicants = await _context.JobApplicant
                 .Where(m => m.JobID == id)
                 .ToListAsync();
             foreach (var applicant in applicants)
             {
-                applicant.User =  _context.Users.First(m => m.Id == applicant.UserID);
-              
-                
+                applicant.User = _context.Users.First(m => m.Id == applicant.UserID);
+
+
             }
             return View(applicants);
-            
-            
+
+
         }
 
     }
