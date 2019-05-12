@@ -66,9 +66,15 @@
 
     </dl>
 </div>
-<div class="editJobInDetail">
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-</div>
+
+@if (ViewBag.CurrentUserId == Model.UserIDCreate && !string.IsNullOrEmpty(ViewBag.CurrentUserId))
+{
+    <div class="editJobInDetail">
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+    </div>
+
+}
+
 
 
 @if (!ViewBag.HasBeenApplied)
