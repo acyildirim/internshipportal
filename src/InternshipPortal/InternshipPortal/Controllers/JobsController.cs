@@ -56,13 +56,28 @@ namespace InternshipPortal
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([FromForm] Job job)
         {
+            var userId = ((System.Security.Claims.ClaimsIdentity)User.Identity).Claims.First(p => p.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
+
+            
             if (ModelState.IsValid)
             {
-                _context.Add(job);
+                _context.Add(new Job
+                {
+                    JobTitle = job.JobTitle,
+                    location = job.location,
+                    Category = job.Category,
+                    UserIDCreate = userId,
+                    Company = job.Company,
+                    ContactEmail = job.ContactEmail,
+                    Description = job.Description,
+                    Salary = job.Salary
+                    
+                });
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(job);
+
         }
 
         // GET: Jobs/Edit/5
@@ -176,5 +191,6 @@ namespace InternshipPortal
             await _context.SaveChangesAsync();
             return View(job);
         }
+
     }
 }

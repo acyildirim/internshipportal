@@ -8,7 +8,12 @@
 <h2 class="createIndexHeader">Current Jobs</h2>
 
 <div class="createNewButton">
+    @if (User.Identity.IsAuthenticated)
+    {
         <a asp-action="Create">Create New</a>
+
+
+    }
 </div>
 
 <table class="table">

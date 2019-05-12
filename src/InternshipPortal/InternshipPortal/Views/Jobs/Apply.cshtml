@@ -1,10 +1,9 @@
-﻿@model InternshipPortal.Models.Job
+﻿@model InternshipPortal.Models.JobApplicant
 
 @{
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <h2>Details</h2>
 
 <div>
@@ -12,32 +11,18 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.JobTitle)
+            @Html.DisplayNameFor(model => model.JobID)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.JobTitle)
+            @Html.DisplayFor(model => model.JobID)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Salary)
+            @Html.DisplayNameFor(model => model.UserID)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Salary)
+            @Html.DisplayFor(model => model.UserID)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.location)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.location)
-        </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
-
-<div>
-    <a asp-action="Apply" asp-route-id="@Model.Id">Apply</a> 
 </div>

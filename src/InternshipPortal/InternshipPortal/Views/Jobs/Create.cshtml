@@ -22,9 +22,15 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="createInputs">
+                <input type="hidden" asp-for="UserIDCreate" id="userCreateID" />
+                <span asp-validation-for="UserIDCreate" class="text-danger"></span>
+            </div>
+
             <div class="createInputs">
                 <label asp-for="JobTitle" class="control-label"></label>
-                <input asp-for="JobTitle" placeholder="Job Title" class="txtJobtitle" />
+                <input asp-for="JobTitle" placeholder="Job Title" class="txtJobtitle" id="txtJobTitle" />
                 <span asp-validation-for="JobTitle" class="text-danger"></span>
             </div>
             <div class="createInputs">
@@ -62,6 +68,7 @@
             </div>
 
             <div class="createInputs">
+
                 <label asp-for="ContactEmail" class="control-label"></label>
                 <textarea asp-for="ContactEmail" placeholder="Enter Contact Email" class="txtEmail"></textarea>
                 <span asp-validation-for="ContactEmail" class="text-danger"></span>

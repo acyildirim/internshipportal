@@ -3,7 +3,7 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url('../images/job5.jpg');
+    background-image: url('../images/job1.jpg');
     background-size: cover;
 }
 
@@ -119,7 +119,7 @@ h3::before {
 
 .search-internship {
     padding: 10px 0;
-    margin: -400px 6% 50px;
+    margin: -50px 6% 50px;
     background-image: linear-gradient(to right, #FFF8DC,#6db9ef);
 }
 
@@ -132,7 +132,7 @@ h3::before {
         border-radius: 0;
         box-shadow: none !important;
         border: none !important;
-        color:aqua;
+        color:red;
     }
 
     .search-internship .btn-primary {
@@ -193,6 +193,7 @@ nav ul li a:hover::after{
 .control-label {
     font-weight: 900;
     color: #fff;
+    font-size:16px;
 }
 .createYazi{
     color:#fff;
@@ -204,6 +205,7 @@ nav ul li a:hover::after{
 }
 ::placeholder {
     color: rgba(255,255,255,.5);
+    font-weight:bold;
 }
 .btnSubmit {
     width:300px;
@@ -460,3 +462,195 @@ nav ul li a:hover::after{
     .btnRegister:hover {
         background-color: red;
     }
+
+/*-------Login PAGE-----------------*/
+
+.loginPageHeader {
+    color: red;
+    font-weight: bold;
+    font-size: 30px;
+}
+.btnLogin {
+    width: 300px;
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: .3s ease-in-out;
+    border-bottom: 3px solid #fff;
+    margin-left: 20px;
+    font-weight:bold;
+}
+    .btnLogin:hover {
+        background-color: red;
+    }
+
+ /*--------------About-------------------*/
+
+.heading { /*meet the team başlığı özellikleri */
+    text-transform: uppercase;
+    font-family: 3.5rem;
+    letter-spacing: 4px; /* harfler arası aralık*/
+    margin-right: -3px;
+    margin-bottom: 5rem; /* kartlarla arasındaki mesafe*/
+    text-align: center;
+    color: #333; /* yazı rengi (renk kodundaki sayılar  #111 den itibaren büyürken renk giderek solgunlaşır) */
+    position: relative;
+}
+
+    .heading::after { /* meet the the başlığı altındaki çizgi özellikleri */
+        content: "";
+        width: 50rem;
+        height: .8rem;
+        background-color: #008B8B;
+        position: absolute;
+        bottom: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2rem;
+    }
+
+.card-wrapper {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.card {
+    width: 32rem; /*kart genişliği*/
+    background-color: #ebeef8; /*kart arka lan rengi*/
+    display: flex;
+    flex-direction: column; /*kartlar dikey mi yatay mı olacak*/
+    align-items: center; /*kartlar sayfanın neresinde olsun center=orta end=son start=üst vs */
+    justify-content: center;
+    margin: 2rem 0;
+    box-shadow: .5rem .5rem 3rem rgba (0,0,0,0.2);
+}
+
+    .card .card-img {
+        width: 100%; /* karttaki üst resmin genişliği*/
+        height: 26rem; /* karttaki üst  uzunluğu*/
+        object-fit: cover;
+        -webkit-clip-path: inset(5% 20% 15% 10%);
+        clip-path: inset(5% 20% 15% 10%);
+    }
+
+.profile-img { /*kişi resim özellikleri */
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -11rem;
+    z-index: 999;
+    border: 1rem solid #ebeef8;
+}
+
+.card h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 1.5rem 0; /*resim ile isim arası mesafe */
+}
+
+.job-title {
+    color: #333; /* okul ismi renig*/
+    font-size: 1.5rem; /* okul ismi boyutu*/
+    font-weight: 300; /* yazı kalınlığı*/
+}
+
+.about { /* about kısmı özellikleri */
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    text-align: center;
+    color: #333;
+}
+
+.card .btn {
+    padding: 1rem 2.5rem;
+    background-color: #444ae3; /* contact buton arka plan rengi */
+    border-radius: 2rem;
+    margin: 1rem 0;
+    text-transform: uppercase;
+    color: #eee;
+    font-size: 1.4rem;
+    transition: all .5s;
+}
+
+    .card .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: .5rem .5rem 2rem rgba(0,0,0,.2); /* contact buton gölge konumu */
+    }
+
+    .card .btn:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+}
+
+.fa-facebook-square:hover,
+.fa-twitter-square:hover,
+.fa-instagram:hover,
+.fa-linkedin:hover,
+.fa-google:hover {
+    color: #45e19f;
+}
+
+@media screen and (min-width: 700px) {
+    .card-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        margin: 2rem;
+        transition: transform .5s;
+    }
+
+
+    .socialmedia {
+        margin: 20px 30px;
+    }
+
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .card:nth-child(1) {
+        animation: fadeIn .5s .5s backwards
+    }
+
+    .card:nth-child(2) {
+        animation: fadeIn .5s 1s backwards
+    }
+
+    .card:nth-child(3) {
+        animation: fadeIn .5s 1.5s backwards
+    }
+
+    .card:nth-child(4) {
+        animation: fadeIn .5s 2s backwards
+    }
+
+    .card:nth-child(5) {
+        animation: fadeIn .5s 2.5s backwards
+    }
+
+    .card:hover {
+        transform: scale(1.05); /*mouse kartın üzerine gelince kart hareket eder */
+    }
+}
