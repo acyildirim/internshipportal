@@ -187,6 +187,8 @@ namespace InternshipPortal
         [Authorize]
         public async Task<IActionResult> Apply(int? id)
         {
+
+
             if (id == null)
             {
                 return NotFound();
@@ -199,21 +201,28 @@ namespace InternshipPortal
                 return NotFound();
             }
             var userId = ((System.Security.Claims.ClaimsIdentity)User.Identity).Claims.First(p => p.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
-            var createdTime = DateTime.Now;
-            _context.Add(new JobApplicant
+
+            var hasBeenApplied = _context.JobApplicant
+               .Any(m => m.UserID == userId && m.JobID == id.Value);
+            if (!hasBeenApplied)
             {
-                JobID = id.Value,
-                UserID = userId,
-                CreatedTime = createdTime
-            });
-            await _context.SaveChangesAsync();
+                var createdTime = DateTime.Now;
+                _context.Add(new JobApplicant
+                {
+                    JobID = id.Value,
+                    UserID = userId,
+                    CreatedTime = createdTime
+                });
+                await _context.SaveChangesAsync();
+
+            }
+            
             return View(job);
 
         }
 
         public async Task<IActionResult> Applicants(int? id)
         {
-
 
             if (id == null)
             {
@@ -230,7 +239,8 @@ namespace InternshipPortal
                 
             }
             return View(applicants);
-
+            
+            
         }
 
     }
