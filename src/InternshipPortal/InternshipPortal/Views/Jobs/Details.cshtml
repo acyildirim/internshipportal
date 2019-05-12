@@ -67,13 +67,15 @@
     </dl>
 </div>
 <div class="editJobInDetail">
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> 
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
 </div>
 
 
+@if (!ViewBag.HasBeenApplied)
+{
+    <div class="applyButtonInDetail">
+        <a asp-action="Apply" asp-route-id="@Model.Id">Apply</a>
+    </div>
+}
 
-
-<div class="applyButtonInDetail">
-    <a asp-action="Apply" asp-route-id="@Model.Id">Apply</a> 
-</div>
 

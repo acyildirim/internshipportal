@@ -44,6 +44,11 @@ namespace InternshipPortal
                 return NotFound();
             }
 
+            var userId = ((System.Security.Claims.ClaimsIdentity)User.Identity).Claims.FirstOrDefault(p => p.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
+            var hasBeenApplied = _context.JobApplicant
+               .Any(m => m.UserID == userId && m.JobID == id.Value);
+            ViewBag.HasBeenApplied = hasBeenApplied;
+
             return View(job);
         }
 
