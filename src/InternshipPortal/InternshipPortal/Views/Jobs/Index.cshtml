@@ -42,7 +42,7 @@
                 <td class="createIndexButtons">
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a>
 
-                    @if (ViewBag.CurrentUserId == item.UserIDCreate)
+                    @if (ViewBag.CurrentUserId == item.UserIDCreate && !string.IsNullOrEmpty(ViewBag.CurrentUserId))
                     {
                         <a asp-action="Applicants" asp-route-id="@item.Id">Applicants</a>
 

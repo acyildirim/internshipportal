@@ -23,7 +23,7 @@ namespace InternshipPortal
         // GET: Jobs
         public async Task<IActionResult> Index()
         {
-            var userId = ((System.Security.Claims.ClaimsIdentity)User.Identity).Claims.First(p => p.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
+            var userId = ((System.Security.Claims.ClaimsIdentity)User.Identity).Claims.FirstOrDefault(p => p.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
             ViewBag.CurrentUserId = userId;
             return View(await _context.Job.ToListAsync());
         }
