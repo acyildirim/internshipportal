@@ -11,9 +11,9 @@ namespace InternshipPortal.Controllers
 {
     public class HomeController : Controller
     {
+
         public IActionResult Index()
         {
-            List<SelectListItem> kategoriler = new List<SelectListItem>();
 
             return View();
         }

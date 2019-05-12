@@ -8,12 +8,7 @@
 <h2 class="createIndexHeader">Current Jobs</h2>
 
 <div class="createNewButton">
-    @if (User.Identity.IsAuthenticated)
-    {
-        <a asp-action="Create">Create New</a>
-
-
-    }
+    <a asp-action="Create">Create New</a>
 </div>
 
 <table class="table">
@@ -32,23 +27,29 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td class="createDetailItems">
-                @Html.DisplayFor(modelItem => item.JobTitle)
-            </td>
-            <td class="createDetailItems">
-                @Html.DisplayFor(modelItem => item.Company)
-            </td>
-            <td class="createDetailItems">
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td class="createIndexButtons">
-                <a class="createIndexEdit" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="createDetailItems">
+                    @Html.DisplayFor(modelItem => item.JobTitle)
+                </td>
+                <td class="createDetailItems">
+                    @Html.DisplayFor(modelItem => item.Company)
+                </td>
+                <td class="createDetailItems">
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td class="createIndexButtons">
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+
+                    @if (ViewBag.CurrentUserId == item.UserIDCreate)
+                    {
+                        <a  asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+
+                        <a asp-action="Delete" ifp-route-id="@item.Id">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

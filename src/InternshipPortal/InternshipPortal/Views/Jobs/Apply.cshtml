@@ -1,28 +1,62 @@
-﻿@model InternshipPortal.Models.JobApplicant
+﻿@model InternshipPortal.Models.Job
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Apply";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Details</h2>
+<h2>Apply</h2>
 
-<div>
-    <h4>Job</h4>
-    <hr />
+<div class="jobDetailBox">
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.JobID)
+        <dt class="createDetailLabels">
+            @Html.DisplayNameFor(model => model.JobTitle)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.JobID)
+        <dd class="createDetailItems">
+            @Html.DisplayFor(model => model.JobTitle)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserID)
+        <dt class="createDetailLabels">
+            @Html.DisplayNameFor(model => model.Company)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.UserID)
+        <dd class="createDetailItems">
+            @Html.DisplayFor(model => model.Company)
+        </dd>
+
+        <dt class="createDetailLabels">
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+        <dd class="createDetailItems">
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+
+        <dt class="createDetailLabels">
+            @Html.DisplayNameFor(model => model.location)
+        </dt>
+        <dd class="createDetailItems">
+            @Html.DisplayFor(model => model.location)
+        </dd>
+
+        <dt class="createDetailLabels">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class="createDetailItems">
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt class="createDetailLabels">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="createDetailItems">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt class="createDetailLabels">
+            @Html.DisplayNameFor(model => model.ContactEmail)
+        </dt>
+        <dd class="createDetailItems">
+            @Html.DisplayFor(model => model.ContactEmail)
         </dd>
 
     </dl>
 </div>
+
